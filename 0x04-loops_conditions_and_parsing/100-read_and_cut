@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Displays the content cut of /etc/passwd.
+
+input="/etc/passwd"
+while IFS=: read -r username _ userid _ _ homedir
+do
+  echo "$username:$userid:$homedir"
+done < "$input"
