@@ -2,7 +2,7 @@
 # The typical FizzBuzz but in Bash script.
 
 i=1;
-until [ $i == 100 ];
+until [ $i == 101 ];
 do
 	if [ $((i%3)) == 0 ] && [ $((i%5)) == 0 ];
 	then
