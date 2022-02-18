@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# A bash script that:
+# Creates a file containing PID
+# Display something
+# Delete file
+
+while true;
+do
+	echo "$$" > /var/run/myscript.pid 
+        echo "To infinity and beyond"
+        sleep 2
+        trap "echo I hate the kill command" SIGTERM
+	trap "echo Y U no love me?!" SIGINT
+done
