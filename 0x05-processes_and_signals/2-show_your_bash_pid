@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Show your bash PID
+# shellcheck disable=SC2009
+
+ps -fC "bash"

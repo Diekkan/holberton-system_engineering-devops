@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script that kills projects.
+
+pkill -9 -f "7-highlander"
