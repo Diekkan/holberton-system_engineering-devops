@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# connect to port 98
+nc -l 98

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# does something
+cp /etc/hosts /etc/hosts.new
+sed -i 's/127.0.0.1/127.0.0.2/' /etc/hosts.new
+if grep -q "facebook.com" /etc/hosts.new
+then
+	:
+else
+	echo -e "8.8.8.8\tfacebook.com" >> /etc/hosts.new
+fi
+cp -f /etc/hosts.new /etc/hosts
