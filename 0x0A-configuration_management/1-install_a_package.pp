@@ -1,4 +1,6 @@
 # Creates a file in /tmp.
 package { 'puppet-lint':
-ensure    => 'installed',
+ensure    => '2.5.0',
+provider  => 'gem',
+source    => 'https://rubygems.org',
 }

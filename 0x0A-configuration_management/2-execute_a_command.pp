@@ -1,5 +1,5 @@
-# Creates a file in /tmp.
-exec { 'puppet-lint':
+# Pkill command.
+exec { 'pkill killmenow':
 command    => 'pkill killmenow',
-path       => '/bin/:/sbin/:/usr/bin/:/usr/sbin/',
+path       => '/usr/local/bin/:/bin/',
 }
