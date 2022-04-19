@@ -1,5 +1,5 @@
 # Creates a file in /tmp.
-file { '/etc/ssh/sshd_config':
+file { '/etc/ssh/ssh_config':
 ensure => 'present',
 owner  => 'root',
 group  => 'root',
