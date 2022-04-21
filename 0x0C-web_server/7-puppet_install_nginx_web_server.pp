@@ -10,8 +10,8 @@ file_line { 'aaaaa':
   line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-file { '/var/www/html/index.html':
-  content => 'Holberton School',
+file { '/var/www/html/index.nginex-debian.html':
+  content => 'Hellow World',
 }
 
 service { 'nginx':
