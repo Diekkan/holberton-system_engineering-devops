@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
-# install nginx
-sudo apt-get update
+#installs nginx and redirects to video and custom 404
+sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo service nginx start
-sudo rm /usr/share/nginx/html/index.html
-echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
-# redirection must be a "301 moved permanently"
-new_string="rewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
-file="/etc/nginx/sites-available/default"
-sed -i "26i $new_string" $file
-# Configure your Nginx server to have a custom 404 page that contains the string Ceci n'est pas une page.
-new_string_404='\     rewrite ^/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;location /xyz{ return 404;}error_page 404 /404.html;location = /404.html {root /usr/share/nginx/html;internal;}# Make site accessible from http://localhost/server_name localhost;'
-sed -i "26i $new_string_404" $file
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
-service nginx restart && service nginx reload
+file1=/usr/share/nginx/html/index.html
+file=/etc/nginx/sites-available/default
+sudo bash -c "echo 'Holberton School ftw!' > $file1"
+service nginx start
+phrase="location /redirect_me {\nreturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}\n"
+sudo sed -i "30i $phrase" $file
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+phrase2="error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot /usr/share/nginx/html;\ninternal;\n}\n"
+sudo sed -i "30i $phrase2" $file
+sudo service nginx restart
