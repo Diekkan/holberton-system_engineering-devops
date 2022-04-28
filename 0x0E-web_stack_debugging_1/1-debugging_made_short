@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Debuggin makin listen on 80
-
-sed -i 's/8080/80/g' /etc/nginx/sites-enable/default
-sudo killall nginx
+sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+sudo service nginx start
+pkill -o nginx
