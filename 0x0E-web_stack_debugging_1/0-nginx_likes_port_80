@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #Debuggin makin listen on 80
-
-sed -i '/8080/80/' /etc/nginx/sites-enable/default
-service nginx restart
+apt-get -y update
+apt-get -y install nginx
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx start
