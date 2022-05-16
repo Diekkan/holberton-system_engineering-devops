@@ -23,7 +23,7 @@ if __name__ == "__main__":
                 tasks += 1
                 if todo.get('completed') is True:
                     done += 1
-                    tasktitle += '\t' + todo.get('title') + " \n"
+                    tasktitle += '\t ' + todo.get('title') + "\n"
         txtformat = f"Employee {username} is done with tasks"
         txtformat += f"({done}/{tasks}):\n"
         txtformat += tasktitle
