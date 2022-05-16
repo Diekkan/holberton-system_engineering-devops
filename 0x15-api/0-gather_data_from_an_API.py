@@ -22,8 +22,8 @@ if __name__ == "__main__":
                 if todo.get('completed') is True:
                     done += 1
                     tasktitle += '\t ' + todo.get('title') + "\n"
-        txtformat = f"Employee {username} is done with tasks"
-        txtformat += f"({done}/{tasks}):\n"
+        txtformat = "Employee {} is done with tasks".format(username)
+        txtformat += "({}/{}):\n".format(done, tasks)
         txtformat += tasktitle
         sys.stdout.write(txtformat)
     except Exception:

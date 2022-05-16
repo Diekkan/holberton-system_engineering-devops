@@ -5,7 +5,7 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    filename = f'{sys.argv[1]}.csv'
+    filename = "{}.csv".format(sys.argv[1])
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     users = requests.get('https://jsonplaceholder.typicode.com/users')
     todos = todos.json()
